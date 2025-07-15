@@ -1,0 +1,193 @@
+/* ===== Global Reset and Base ===== */
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f9fd;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.4em;
+  letter-spacing: 1px;
+}
+
+#network-status {
+  font-size: 1em;
+  margin-top: 10px;
+  color: #ffd60a;
+}
+
+/* ===== Main Container ===== */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* ===== Box Sections ===== */
+.box {
+  background: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.box h2 {
+  font-size: 1.6em;
+  color: #0077b6;
+  margin-bottom: 20px;
+}
+
+/* ===== Map Section ===== */
+#map {
+  height: 400px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+#location {
+  font-size: 1.05rem;
+  margin-top: 15px;
+  color: #333;
+}
+
+/* ===== Chart Section ===== */
+#canvas-section {
+  background: #f0f4f8;
+  padding: 30px;
+}
+
+/* Row for 3 equal charts */
+.chart-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  width: calc(33.333% - 13.33px);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  box-sizing: border-box;
+  will-change: transform;
+  transform-origin: center;
+  position: relative;  
+  overflow: hidden;    
+  z-index: 0;
+}
+
+.chart-card:hover {
+  transform: scale(1.02);
+  z-index: 2;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+.chart-card h3 {
+  color: #023e8a;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  height: 250px !important;
+  background: #e0f7fa;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  display: block;
+  max-width: 100%
+}
+
+@media (max-width: 960px) {
+  .chart-row {
+    flex-wrap: wrap;
+  }
+
+  .chart-card {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+
+/* ===== Summary Section ===== */
+.summary {
+  background: #caf0f8;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.summary p {
+  font-size: 1.05rem;
+  margin: 10px 0;
+}
+
+#tips ul {
+  text-align: left;
+  padding-left: 20px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+/* ===== Reveal Animation (Intersection Observer) ===== */
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 960px) {
+  .chart-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  main {
+    padding: 0 15px;
+  }
+
+  header h1 {
+    font-size: 2em;
+  }
+}

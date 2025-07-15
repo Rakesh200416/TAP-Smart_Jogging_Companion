@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Jogging Companion</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <!--  network section  -->
+  <h1>🏃‍♂️ Smart Jogging Companion</h1>
+  <p id="network-status">Detecting network...</p>
+</header>
+
+  <main>
+    <!-- map section -->
+    <section class="box" id="location-section">
+  <h2>Your Current Location</h2>
+
+  <!-- Map -->
+  <div id="map" style="height: 400px; width: 100%; margin-top: 10px;"></div>
+
+  <!-- Location Info -->
+  <p id="location">Fetching location...</p>
+
+  <!-- Destination Setter -->
+  <div style="margin-top: 10px;">
+    <button id="set-destination" style="padding: 8px 12px; background-color: #0077b6; color: white; border: none; border-radius: 6px; cursor: pointer;">
+      🧭 Set Destination (Click on Map)
+    </button>
+    <p id="destination-info" style="margin-top: 10px;"></p>
+
+    <div id="destination-details" style="margin-top: 10px; font-size: 0.95rem; color: #333;"></div>
+  </div>
+</section>
+
+
+    <!-- canvas section   -->
+    <section class="box" id="canvas-section">
+      <h2>Your Jogging Stats</h2>
+
+     <div class="chart-row">
+        <!-- 📈 Line Chart -->
+       <div class="chart-card">
+         <h3>Calories Burned</h3>
+          <canvas id="lineChart"></canvas>
+       </div>
+
+        <!-- 🥧 Pie Chart -->
+       <div class="chart-card">
+          <h3>Workout Breakdown</h3>
+          <canvas id="pieChart"></canvas>
+       </div>
+
+        <!-- 📊 Bar Chart -->
+       <div class="chart-card">
+          <h3>Weekly Distance</h3>
+           <canvas id="barChart"></canvas>
+       </div>
+     </div>
+    </section>
+
+<!-- Intersection section   -->
+   <section class="box hidden" id="tips">
+  <h2>📌 Your Weekly Summary</h2>
+
+  <div class="summary">
+    <p><strong>Total Distance Covered:</strong> <span>24.1 km</span></p>
+    <p><strong>Total Calories Burned:</strong> <span>2330 kcal</span></p>
+    <p><strong>Most Active Day:</strong> <span>Saturday</span></p>
+    <p><strong>Least Active Day:</strong> <span>Sunday</span></p>
+  </div>
+
+  <h3>Pro Tips 💡</h3>
+  <ul>
+    <li>Stay hydrated throughout your workout 💧</li>
+    <li>Warm up before running and stretch afterward 🧘‍♂️</li>
+    <li>Try interval training to improve stamina 🏃‍♂️</li>
+    <li>Set weekly goals to stay consistent 🎯</li>
+  </ul>
+</section>
+</main>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>
