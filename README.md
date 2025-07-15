@@ -6,9 +6,13 @@ TAP - Smart Jogging Companion is a dynamic, browser-based fitness assistant that
 🌟 Key Features
 
 📍 Real-Time Location & Maps
+
 Uses the Geolocation API to detect your current position.
+
 Displays your live location using Leaflet.js and OpenStreetMap.
+
 Allows users to set a destination by clicking on the map, view distance, and estimate jogging time based on a fixed pace (6 km/h).
+
 Destination is draggable with auto-updated distance, ETA, and reverse-geocoded place names via Nominatim API.
 
 📊 Data Visualization
